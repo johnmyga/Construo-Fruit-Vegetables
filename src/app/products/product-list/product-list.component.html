@@ -1,1 +1,7 @@
-<p>product-list works!</p>
+<div class="row g-4">
+  @for (product of products(); track product.id) {
+  <div class="col-md-4">
+    <app-product-card [product]="product" />
+  </div>
+  }
+</div>
