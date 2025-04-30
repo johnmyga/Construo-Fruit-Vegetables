@@ -1,0 +1,41 @@
+<div class="cart-container">
+    <h2>Order Cart</h2>
+  
+    <table class="full-width-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Unit</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of items(); track item.product.id) {
+          <tr>
+            <td>{{ item.product.name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.product.unit }}</td>
+            <td>
+              <button
+                mat-icon-button
+                color="warn"
+                aria-label="Remove item"
+                (click)="onRemove(item.product.id)"
+              >
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+    <div>
+        <h2>{{ totalAmount() | currency: 'EUR' }}</h2>
+    </div>
+  
+    <div class="actions mt-4">
+      <button mat-raised-button color="primary">Checkout</button>
+      <button mat-raised-button color="accent">Update</button>
+    </div>
+  </div>
+  

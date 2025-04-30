@@ -1,7 +1,18 @@
-<div class="row g-4">
-  @for (product of products(); track product.id) {
-  <div class="col-md-4">
-    <app-product-card [product]="product" />
-  </div>
+<div class="filters-wrapper">
+
+    <h3>FIlters: </h3>
+    <mat-button-toggle-group name="ingredients" aria-label="Ingredients" multiple (change)="filterApplied($event)">
+      <mat-button-toggle value="organic">Organic</mat-button-toggle>
+      <mat-button-toggle value="portuguese">Portuguese</mat-button-toggle>
+    </mat-button-toggle-group>
+</div>
+
+
+<div class="product-grid">
+  @for (product of pagedProducts(); track product.id) {
+  <app-product-card [product]="product" class="product-card"></app-product-card>
   }
 </div>
+
+<mat-paginator [length]="length()" [pageSize]="pageSize" [pageSizeOptions]="[pageSize]"
+  (page)="onPage($event)"></mat-paginator>

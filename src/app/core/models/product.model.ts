@@ -3,7 +3,7 @@ export interface ProductModel {
     name: string;
     type: 'Fruit' | 'Vegetable';
     price: number;
-    unit: 'kg' | 'piece' | 'head';
+    unit: 'kg' ;
     origin: string;
     imageUrl: string;
     description: string;

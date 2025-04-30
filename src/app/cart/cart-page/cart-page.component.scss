@@ -1,0 +1,27 @@
+.full-width-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+        text-align: left;
+        padding: 0.75rem;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    th:last-child,
+    td:last-child {
+        width: 48px;
+        text-align: center;
+    }
+}
+
+.cart-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+}

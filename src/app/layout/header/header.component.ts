@@ -5,6 +5,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ProductService } from '../../core/services/product.service';
+import { RouterLink } from '@angular/router';
+import { CartService } from '../../core/services/cart.service';
+import { MatBadge } from '@angular/material/badge';
 
 @Component({
   selector: 'app-header',
@@ -14,15 +17,21 @@ import { ProductService } from '../../core/services/product.service';
     MatIconModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    RouterLink,
+    MatBadge
   ],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
   private productService = inject(ProductService);
+  private cartService = inject(CartService)
+
+  public readonly cartCount = this.cartService.totalQuantity;
 
   onSearch(value: string) {
     this.productService.filterByName(value);
   }
+
 }

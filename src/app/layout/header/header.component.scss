@@ -1,16 +1,47 @@
 :host {
-    display: block;
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+
+mat-sidenav-content {
+  padding-top: 8px;
 }
 
 .toolbar-title {
-    font-weight: bold;
+  font-weight: bold;
+  font-family: 'Cal Sans';
+  white-space: nowrap;
+  font-size: xx-large
 }
 
-.spacer {
-    flex: 1 1 auto;
+// .mat-icon-button {
+//   flex: 0 0 auto;
+//   /* don’t grow the cart icon */
+// }
+
+.header-wrapper {
+  margin-top: 50px;
 }
 
-.search-field {
-    width: 240px;
-    margin-right: 16px;
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

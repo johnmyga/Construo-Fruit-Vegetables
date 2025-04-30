@@ -1,0 +1,65 @@
+<!-- @if (product()) {
+    <section class="detail-container">
+      <h2>{{ product()!.name }}</h2>
+      <img
+        [src]="product()!.imageUrl"
+        [alt]="product()!.name"
+        class="detail-image"
+      />
+  
+      <p><strong>Price:</strong> {{ product()!.price }} € / {{ product()!.unit }}</p>
+      <p><strong>Origin:</strong> {{ product()!.origin }}</p>
+      <p>{{ product()!.description }}</p>
+  
+      <div class="input-group mt-3 mb-3">
+        <label for="qty" class="me-2">Quantity ({{ product()!.unit }}):</label>
+        <input
+          id="qty"
+          type="number"
+          min="1"
+          [value]="quantity()"
+          (input)="quantity.set($any($event.target).valueAsNumber)"
+          class="form-control"
+          style="width: 100px;"
+        />
+      </div>
+  
+      <button
+        class="btn btn-success"
+        (click)="onAddToCart()"
+      >
+        Add to Cart
+      </button>
+  
+      <div class="badges mt-3">
+        @if (product()!.organic) {
+          <span class="badge bg-success me-1">Organic</span>
+        }
+        @if (product()!.portuguese) {
+          <span class="badge bg-primary">Portuguese</span>
+        }
+      </div>
+    </section>
+  } @else {
+    <p>Product not found.</p>
+  }
+   -->
+
+<div class="product-card">
+    <h2>{{ product()!.name }}</h2>
+    <img [src]="product()!.imageUrl" [alt]="product()!.name" />
+
+    <div class="product-info">
+        <p class="price">Price: {{ product()!.price }} € / kg</p>
+        <p>Origin: {{ product()!.origin }}</p>
+        <p>{{ product()!.description }}</p>
+    </div>
+
+    <div class="submit-wrapper">
+        <mat-form-field subscriptSizing="dynamic">
+            <mat-label>Amount</mat-label>
+            <input matInput [(ngModel)]="quantity" id="quantity" type="number" min="1" name="quantity" />
+        </mat-form-field>
+        <button mat-raised-button (click)="onAddToCart()" [disabled]="!quantity">Add to Cart</button>
+    </div>
+</div>

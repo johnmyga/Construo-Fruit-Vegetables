@@ -1,3 +1,56 @@
+// :host {
+//     display: block;
+//     height: 100%;
+// }
+
+// mat-card {
+//     display: flex;
+//     flex-direction: column;
+//     height: 100%;
+// }
+
+// mat-card-content {
+//     flex: 1;
+// }
+
 mat-card {
-    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-image-container {
+    position: relative;
+    height: 180px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.product-image {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 180px;
+}
+
+.product-classifier {
+    display: flex;
+    gap: 8px;
+}
+
+.chip {
+    padding: 4px 8px;
+    color: white;
+    border-radius: 8px;
+
+    &.organic{
+        background-color: green;
+    }
+    &.portuguese{
+        background: linear-gradient(95deg,rgba(51, 148, 46, 1) 0%, rgba(250, 0, 0, 1) 100%);
+    }
 }
