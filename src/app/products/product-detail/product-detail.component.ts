@@ -37,16 +37,6 @@ export class ProductDetailComponent {
 
   // Called when “Add to Cart” is clicked
   onAddToCart() {
-    // // const p = this.product();
-    // // if (!p) return;
-    // // this.cartService.addItem(p, this.quantity());
-    // // // reset quantity or give feedback if you like:
-    // // this.quantity.set(1);
-    // // const quantity = parseInt(this.quantity(), 10) || 1;
-    // // your existing cart service call, e.g.:
-    // // this.cartService.addItem(this.product, quantity);
-    // console.log('qtt', this.quantity);
-    // console.log('product ', this.product());
     if(this.product()){  
       this.cartService.addItem((this.product() as ProductModel), this.quantity)
     }

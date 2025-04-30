@@ -1,35 +1,10 @@
-// .detail-container {
-//     max-width: 600px;
-//     margin: auto;
-//     padding: 1rem;
-// }
-
-// .detail-image {
-//     width: 100%;
-//     border-radius: 8px;
-//     margin-bottom: 1rem;
-// }
-
-// .input-group {
-//     display: flex;
-//     align-items: center;
-// }
-
-/* product-detail.component.scss */
-
 .product-card {
     max-width: 500px;
-    /* limit card width */
     margin: 2rem auto;
-    /* center & give vertical breathing room */
     padding: 1.5rem;
-    /* inner padding */
     background: #ffffff;
-    /* white background */
     border-radius: 0.5rem;
-    /* rounded corners */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    /* subtle drop-shadow */
     display: flex;
     flex-direction: column;
     align-items: center;
